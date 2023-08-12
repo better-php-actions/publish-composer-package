@@ -14,7 +14,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "zip -jrq /tmp/release.zip ./*.bash ./*.yml ./README.md ./LICENSE"
+        "prepareCmd": "zip -jrq /tmp/release.zip ./scripts ./*.yml ./README.md ./LICENSE"
       }
     ],
     [
