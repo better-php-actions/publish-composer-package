@@ -4,6 +4,12 @@ branding:
   icon: archive
   color: blue
 inputs:
+  package_slug:
+    description: Package slug
+    required: true
+  package_name:
+    description: Package name
+    required: true
   with_gpg:
     description: Whether to use GPG to sign the commit
     required: false
@@ -14,12 +20,6 @@ inputs:
   gpg_passphrase:
     description: GPG passphrase
     required: false
-  package_slug:
-    description: Package slug
-    required: true
-  package_name:
-    description: Package name
-    required: true
   release_token:
     description: GitHub token of the user who will release the package
     default: ${{ github.token }}
