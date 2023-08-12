@@ -1,0 +1,43 @@
+{
+  "branches": [
+    "GITHUB_ACTION_MAIN_BRANCH"
+  ],
+  "plugins": [
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "GITHUB_ACTION_PATH/update-version.bash ${nextRelease.version}"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "composer.json"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          {
+            "path": "/tmp/release.zip",
+            "name": "GITHUB_ACTION_PACKAGE_SLUG-${nextRelease.version}.zip",
+            "label": "GITHUB_ACTION_PACKAGE_NAME v${nextRelease.version}"
+          }
+        ]
+      }
+    ]
+  ]
+}
