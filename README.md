@@ -80,3 +80,6 @@ jobs:
           gpg_passphrase: ${{ secrets.GPG_PASSPHRASE }}
           release_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 ```
+
+**Note:** _This Action automatically updates itself via [renovate](https://github.com/apps/renovate)_
+
