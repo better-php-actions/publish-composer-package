@@ -6,7 +6,7 @@
 # PACKAGE_NAME=a
 # GITHUB_WORKSPACE='.'
 
-releaserc=$(cat "$ACTION_DIR/templates/.releaserc")
+releaserc=$(cat "$ACTION_DIR/templates/.releaserc.template")
 
 releaserc="${releaserc//GITHUB_ACTION_MAIN_BRANCH/$MAIN_BRANCH}"
 releaserc="${releaserc//GITHUB_ACTION_PATH/$ACTION_DIR}"
