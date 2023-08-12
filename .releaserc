@@ -1,6 +1,6 @@
 {
   "branches": [
-    "GITHUB_ACTION_MAIN_BRANCH"
+    "master"
   ],
   "plugins": [
     [
@@ -14,7 +14,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "GITHUB_ACTION_PATH/scripts/update-version.bash ${nextRelease.version}"
+        "prepareCmd": "zip -jrq /tmp/release.zip ./*.bash ./*.yml ./README.md ./LICENSE"
       }
     ],
     [
@@ -22,9 +22,18 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "composer.json"
+          ".github/workflows/reusable_*.yml"
         ],
         "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    [
+      "semantic-release-major-tag",
+      {
+        "customTags": [
+          "v${major}",
+          "v${major}.${minor}"
+        ]
       }
     ],
     [
@@ -33,8 +42,8 @@
         "assets": [
           {
             "path": "/tmp/release.zip",
-            "name": "GITHUB_ACTION_PACKAGE_SLUG-${nextRelease.version}.zip",
-            "label": "GITHUB_ACTION_PACKAGE_NAME v${nextRelease.version}"
+            "name": "publish-composer-package-${nextRelease.version}.zip",
+            "label": "Composer Package Publisher v${nextRelease.version}"
           }
         ]
       }

@@ -50,14 +50,14 @@ runs:
     - name: Check for package.json
       id: package_json
       run: |
-        ${{ github.action_path}}/check-package-json.bash
+        ${{ github.action_path}}/scripts/check-package-json.bash
       shell: bash
 
     - name: Copy package.json
       env:
         ACTION_DIR: ${{ github.action_path}}/templates
       run: |
-        ${{ github.action_path}}/copy-package-json.bash
+        ${{ github.action_path}}/scripts/copy-package-json.bash
       if: ${{ steps.package_json.outputs.available == 'no' }}
       shell: bash
 
@@ -68,7 +68,7 @@ runs:
         PACKAGE_SLUG: ${{ inputs.package_slug }}
         PACKAGE_NAME: ${{ inputs.package_name }}
       run: |
-        ${{ github.action_path}}/copy-releaserc.bash
+        ${{ github.action_path}}/scripts/copy-releaserc.bash
       shell: bash
 
     - name: Setup Node.js
