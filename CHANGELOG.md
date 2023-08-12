@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/better-php-actions/publish-composer-package/compare/v1.0.0...v1.0.1) (2023-08-12)
+
+
+### Bug Fixes
+
+* Fixed double dot in filename ([747dc9d](https://github.com/better-php-actions/publish-composer-package/commit/747dc9d59207448c0b4f2f600668ceec135b537d))
+
 # 1.0.0 (2023-08-12)
 
 
