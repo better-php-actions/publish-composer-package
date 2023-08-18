@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/better-php-actions/publish-composer-package/compare/v1.0.1...v1.0.2) (2023-08-18)
+
+
+### Bug Fixes
+
+* **deps:** lock file maintenance ([83bce77](https://github.com/better-php-actions/publish-composer-package/commit/83bce775fddc5664151685d43ccc2d475c1814d7))
+
 ## [1.0.1](https://github.com/better-php-actions/publish-composer-package/compare/v1.0.0...v1.0.1) (2023-08-12)
 
 
