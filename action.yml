@@ -36,7 +36,7 @@ runs:
   using: composite
   steps:
     - name: Import GPG key
-      uses: crazy-max/ghaction-import-gpg@v5
+      uses: crazy-max/ghaction-import-gpg@v6
       id: gpg
       if: ${{ inputs.with_gpg == 'true' }}
       with:
