@@ -9,8 +9,7 @@
 releaserc=$(cat "$ACTION_DIR/templates/.releaserc.template")
 
 releaserc="${releaserc//GITHUB_ACTION_MAIN_BRANCH/$MAIN_BRANCH}"
-releaserc="${releaserc//GITHUB_ACTION_PATH/$ACTION_DIR}"
 releaserc="${releaserc//GITHUB_ACTION_PACKAGE_SLUG/$PACKAGE_SLUG}"
 releaserc="${releaserc//GITHUB_ACTION_PACKAGE_NAME/$PACKAGE_NAME}"
 
-echo "$releaserc" > "$GITHUB_WORKSPACE/.releaserc"
+echo "$releaserc" >"$GITHUB_WORKSPACE/.releaserc"
