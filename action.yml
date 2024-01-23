@@ -1,7 +1,7 @@
 name: Publish a Composer package
 description: Publishes a Composer package to Packagist
 branding:
-  icon: archive
+  icon: package
   color: blue
 inputs:
   package_slug:
