@@ -2,7 +2,6 @@
   "branches": [
     "GITHUB_ACTION_MAIN_BRANCH"
   ],
-  "tagFormat": "${version}",
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
